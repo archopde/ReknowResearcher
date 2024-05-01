@@ -1,5 +1,4 @@
 #Ignore env containing secrets
-.env
 .venv
 .envrc
 
