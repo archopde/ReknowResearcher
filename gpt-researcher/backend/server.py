@@ -29,7 +29,7 @@ manager = WebSocketManager()
 def startup_event():
    # if not os.path.isdir("outputs"):
        # os.makedirs("outputs")
-    app.mount("/tmp", StaticFiles(directory="tmp"), name="tmp")
+    app.mount("/tmp", StaticFiles(directory="outputs"), name="outputs")
 
 @app.get("/")
 async def read_root(request: Request):
