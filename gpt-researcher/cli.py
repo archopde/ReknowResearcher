@@ -81,7 +81,7 @@ async def main(args):
     report = await researcher.write_report()
 
     # Write the report to a file
-    artifact_filepath = f"outputs/{uuid4()}.md"
+    artifact_filepath = f"tmp/{uuid4()}.md"
     with open(artifact_filepath, "w") as f:
         f.write(report)
 
