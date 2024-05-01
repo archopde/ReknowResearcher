@@ -25,11 +25,11 @@ manager = WebSocketManager()
 
 
 # Dynamic directory for outputs once first research is run
-@app.on_event("startup")
-def startup_event():
+#@app.on_event("startup")
+#def startup_event():
    # if not os.path.isdir("outputs"):
        # os.makedirs("outputs")
-    app.mount("/tmp", StaticFiles(directory="outputs"), name="outputs")
+    #app.mount("/tmp", StaticFiles(directory="outputs"), name="outputs")
 
 @app.get("/")
 async def read_root(request: Request):
