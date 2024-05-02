@@ -1,3 +1,4 @@
+from tempfile import gettempdir
 import aiofiles
 import urllib
 import uuid
@@ -29,7 +30,8 @@ async def write_md_to_pdf(text: str) -> str:
         str: The encoded file path of the generated PDF.
     """
     task = uuid.uuid4().hex
-    file_path = f"tmp/{task}"
+    tempDir = gettempdir()
+    file_path = f"{tempDir}/{task}"
     await write_to_file(f"{file_path}.md", text)
 
     try:

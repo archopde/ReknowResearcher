@@ -11,6 +11,7 @@ python cli.py "<query>" --report_type <report_type>
 import asyncio
 import argparse
 from argparse import RawTextHelpFormatter
+from tempfile import gettempdir
 from uuid import uuid4
 
 from dotenv import load_dotenv
@@ -81,7 +82,8 @@ async def main(args):
     report = await researcher.write_report()
 
     # Write the report to a file
-    artifact_filepath = f"tmp/{uuid4()}.md"
+    tempDir = gettempdir()
+    artifact_filepath = f"{tempDir}/{uuid4()}.md"
     with open(artifact_filepath, "w") as f:
         f.write(report)
 
