@@ -30,8 +30,7 @@ async def write_md_to_pdf(text: str) -> str:
         str: The encoded file path of the generated PDF.
     """
     task = uuid.uuid4().hex
-    tempDir = gettempdir()
-    file_path = f"{tempDir}/{task}"
+    file_path = f"outputs/{task}"
     await write_to_file(f"{file_path}.md", text)
 
     try:
@@ -58,7 +57,7 @@ async def write_md_to_word(text: str) -> str:
         str: The encoded file path of the generated DOCX.
     """
     task = uuid.uuid4().hex
-    file_path = f"tmp/{task}"
+    file_path = f"outputs/{task}"
 
     try:
         # Convert report markdown to HTML
