@@ -31,5 +31,5 @@ USER gpt-researcher
 COPY --chown=gpt-researcher:gpt-researcher ./ ./
 
 EXPOSE 8000
-CMD gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
+CMD gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app --timeout 1200
 
